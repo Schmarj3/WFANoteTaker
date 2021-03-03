@@ -21,7 +21,11 @@ namespace WFANoteTaker
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            table = new DataTable();
+            table.Columns.Add("Title", typeof(String));
+            table.Columns.Add("Message", typeof(String));
 
+            dataGridView1.DataSource = table;
         }
 
     }
