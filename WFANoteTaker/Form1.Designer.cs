@@ -31,8 +31,8 @@ namespace WFANoteTaker
         {
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelMessage = new System.Windows.Forms.Label();
-            this.messageText = new System.Windows.Forms.TextBox();
             this.titleText = new System.Windows.Forms.TextBox();
+            this.messageText = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -49,7 +49,6 @@ namespace WFANoteTaker
             this.labelTitle.Size = new System.Drawing.Size(70, 32);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Title";
-            this.labelTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelMessage
             // 
@@ -59,7 +58,13 @@ namespace WFANoteTaker
             this.labelMessage.Size = new System.Drawing.Size(130, 32);
             this.labelMessage.TabIndex = 1;
             this.labelMessage.Text = "Message";
-            this.labelMessage.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // titleText
+            // 
+            this.titleText.Location = new System.Drawing.Point(46, 121);
+            this.titleText.Name = "titleText";
+            this.titleText.Size = new System.Drawing.Size(500, 38);
+            this.titleText.TabIndex = 3;
             // 
             // messageText
             // 
@@ -69,21 +74,17 @@ namespace WFANoteTaker
             this.messageText.Size = new System.Drawing.Size(491, 184);
             this.messageText.TabIndex = 2;
             // 
-            // titleText
-            // 
-            this.titleText.Location = new System.Drawing.Point(46, 121);
-            this.titleText.Name = "titleText";
-            this.titleText.Size = new System.Drawing.Size(500, 38);
-            this.titleText.TabIndex = 3;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(626, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.Size = new System.Drawing.Size(491, 419);
@@ -91,12 +92,13 @@ namespace WFANoteTaker
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(55, 588);
+            this.buttonNew.Location = new System.Drawing.Point(59, 588);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(207, 46);
             this.buttonNew.TabIndex = 5;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonSave
             // 
@@ -106,6 +108,7 @@ namespace WFANoteTaker
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonRead
             // 
@@ -115,6 +118,7 @@ namespace WFANoteTaker
             this.buttonRead.TabIndex = 7;
             this.buttonRead.Text = "Read";
             this.buttonRead.UseVisualStyleBackColor = true;
+            this.buttonRead.Click += new System.EventHandler(this.buttonRead_Click);
             // 
             // buttonDelete
             // 
@@ -125,6 +129,7 @@ namespace WFANoteTaker
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // Form1
             // 
@@ -136,10 +141,11 @@ namespace WFANoteTaker
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.titleText);
             this.Controls.Add(this.messageText);
+            this.Controls.Add(this.titleText);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.labelTitle);
+            this.ActiveControl = titleText;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -153,8 +159,8 @@ namespace WFANoteTaker
 
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelMessage;
-        private System.Windows.Forms.TextBox messageText;
         private System.Windows.Forms.TextBox titleText;
+        private System.Windows.Forms.TextBox messageText;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonSave;
