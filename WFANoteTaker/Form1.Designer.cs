@@ -49,7 +49,7 @@ namespace WFANoteTaker
             this.labelTitle.Size = new System.Drawing.Size(70, 32);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Title";
-            this.labelTitle.Click += new System.EventHandler(this.label1_Click);
+            //this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // labelMessage
             // 
@@ -59,7 +59,7 @@ namespace WFANoteTaker
             this.labelMessage.Size = new System.Drawing.Size(130, 32);
             this.labelMessage.TabIndex = 1;
             this.labelMessage.Text = "Message";
-            this.labelMessage.Click += new System.EventHandler(this.label2_Click);
+            //this.labelMessage.Click += new System.EventHandler(this.labelMessage_Click);
             // 
             // messageText
             // 
@@ -146,6 +146,7 @@ namespace WFANoteTaker
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
         }
 
