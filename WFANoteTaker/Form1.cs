@@ -12,6 +12,8 @@ namespace WFANoteTaker
 {
     public partial class Form1 : Form
     {
+        DataTable table;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,14 +24,5 @@ namespace WFANoteTaker
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
